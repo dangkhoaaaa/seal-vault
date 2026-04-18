@@ -1,0 +1,9 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "framework": "nextjs",
+  "env": {
+    "NEXT_PUBLIC_PACKAGE_ID": "0x88874506b9b97400ec00346599c43dcfcff35d899acb302e664c3dc44a27437a",
+    "NEXT_PUBLIC_NETWORK": "testnet"
+  }
+}
