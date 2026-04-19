@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "extvault",
+  "version": "1.0.0",
+  "description": "Password vault — Seal encrypted, Walrus stored. No popup, works in-page.",
+  "action": {
+    "default_title": "extvault"
+  },
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/injected.ts"],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/index.ts"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": ["index.html", "assets/*", "*.js", "*.css"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}

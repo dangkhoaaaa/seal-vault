@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Providers from './Providers';
 import { Header } from '@/components/Header';
-
+import ExtensionBridge from '@/components/ExtensionBridge';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -21,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <Header />
           <main className="max-w-5xl mx-auto p-6">{children}</main>
+          <ExtensionBridge />
         </Providers>
       </body>
     </html>
